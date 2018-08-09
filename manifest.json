@@ -1,0 +1,20 @@
+{
+  "name": "BrowserData",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "Scrap Browser Data",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["inject.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Inject!"
+  },
+  "permissions": ["https://*/*", "http://*/*", "tabs"]
+}
